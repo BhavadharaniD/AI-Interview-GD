@@ -12,9 +12,9 @@ const Dashboard = ({ navigateTo, user }) => {
             <p className="text-gray-400">Ready to practice today?</p>
           </div>
           <div className="flex gap-4">
-            <button className="btn btn-secondary" onClick={() => navigateTo('landing')}>
+            <button className="btn btn-secondary" onClick={() => navigateTo('/analytics')}>
               Analytics
-            </button>
+            </button> 
             <button className="btn btn-primary">Profile</button>
           </div>
         </div>
@@ -60,7 +60,7 @@ const Dashboard = ({ navigateTo, user }) => {
                 👥
               </div>
               <h3 className="mb-2 text-xl">Group Discussion</h3>
-              <p className="text-gray-400 mb-5">Practice GDs with AI participants</p>
+              <p className="text- mb-5">Practice GDs with AI participants</p>
               <button className="btn btn-primary">Start Session</button>
             </div>
             <div className="mode-card">
