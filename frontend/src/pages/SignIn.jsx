@@ -20,10 +20,10 @@ const SignIn = ({ navigateTo, onSignIn }) => {
 
   return (
     <div className="page">
-      <div className="auth-container">
+      <div className="flex justify-center items-center min-h-screen px-5">
         <div className="auth-card">
-          <h2>Welcome Back</h2>
-          <p>Sign in to continue your practice</p>
+          <h2 className="text-center text-4xl mb-2 gradient-text">Welcome Back</h2>
+          <p className="text-center text-gray-400 mb-8">Sign in to continue your practice</p>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -50,18 +50,25 @@ const SignIn = ({ navigateTo, onSignIn }) => {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+            <button type="submit" className="btn btn-primary w-full">
               Sign In
             </button>
 
-            <a href="#" className="forgot-password">
+            <a href="#" className="block text-center my-5 text-gray-400 no-underline hover:text-[#ff00ff]">
               Forgot Password?
             </a>
           </form>
 
-          <div className="auth-footer">
+          <div className="text-center mt-5 text-gray-400">
             Don't have an account?{' '}
-            <a href="#" onClick={(e) => { e.preventDefault(); navigateTo('signup'); }}>
+            <a
+              href="#"
+              className="text-[#ff00ff] no-underline font-semibold hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('signup');
+              }}
+            >
               Sign Up
             </a>
           </div>

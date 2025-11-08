@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(90deg, #ff0080, #ff00ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-bg-primary {
+    background: linear-gradient(90deg, #ff0080, #ff00ff);
+  }
+
+  .gradient-bg-purple {
+    background: linear-gradient(135deg, #ff0080, #ff00ff);
+  }
+
+  .gradient-bg-card {
+    background: linear-gradient(
+      135deg,
+      rgba(75, 0, 130, 0.3),
+      rgba(138, 43, 226, 0.2)
+    );
+  }
+
+  .gradient-bg-card-alt {
+    background: linear-gradient(
+      135deg,
+      rgba(75, 0, 130, 0.4),
+      rgba(138, 43, 226, 0.3)
+    );
+  }
+
+  .gradient-bg-auth {
+    background: linear-gradient(
+      135deg,
+      rgba(75, 0, 130, 0.6),
+      rgba(138, 43, 226, 0.4)
+    );
+  }
+
+  .gradient-bg-body {
+    background: linear-gradient(135deg, #0a0015 0%, #1a0033 100%);
+  }
+
+  .radial-gradient-mic {
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.2), transparent);
+  }
+}
+
+@layer components {
+  .page {
+    @apply animate-fadeIn;
+  }
+
+  .btn {
+    @apply px-9 py-4 border-none rounded-full text-base font-semibold cursor-pointer transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply gradient-bg-primary text-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(255,0,128,0.4)];
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-[#ff00ff] text-white hover:bg-[rgba(255,0,255,0.1)];
+  }
+
+  .feature-card {
+    @apply gradient-bg-card p-8 rounded-2xl text-center transition-transform duration-300 border border-[rgba(255,0,255,0.2)] hover:-translate-y-2;
+  }
+
+  .why-card {
+    @apply gradient-bg-card-alt p-8 rounded-2xl border border-[rgba(255,0,255,0.3)];
+  }
+
+  .testimonial-card {
+    @apply gradient-bg-card p-8 rounded-2xl border border-[rgba(255,0,255,0.2)];
+  }
+
+  .auth-card {
+    @apply gradient-bg-auth p-12 rounded-[30px] w-full max-w-[500px] border border-[rgba(255,0,255,0.3)];
+  }
+
+  .form-group {
+    @apply mb-6;
+  }
+
+  .form-group label {
+    @apply block mb-2 font-medium;
+  }
+
+  .form-group input,
+  .form-group select {
+    @apply w-full px-5 py-4 rounded-xl border-none bg-black/50 text-white text-base;
+  }
+
+  .form-group input::placeholder {
+    @apply text-gray-500;
+  }
+
+  .form-group select {
+    @apply cursor-pointer;
+  }
+
+  .stat-card {
+    @apply gradient-bg-card-alt p-8 rounded-2xl border border-[rgba(255,0,255,0.3)] flex justify-between items-center;
+  }
+
+  .mode-card {
+    @apply gradient-bg-card-alt p-10 rounded-2xl border border-[rgba(255,0,255,0.3)] text-center;
+  }
+
+  .recent-activity {
+    @apply gradient-bg-card p-8 rounded-2xl border border-[rgba(255,0,255,0.2)];
+  }
+
+  .activity-item {
+    @apply flex justify-between items-center py-5 border-b border-white/10 last:border-b-0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.animate-pulse-custom {
+  animation: pulse 2s ease-in-out infinite;
+}

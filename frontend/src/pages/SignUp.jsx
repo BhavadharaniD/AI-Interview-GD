@@ -23,10 +23,10 @@ const SignUp = ({ navigateTo, onSignUp }) => {
 
   return (
     <div className="page">
-      <div className="auth-container">
+      <div className="flex justify-center items-center min-h-screen px-5">
         <div className="auth-card">
-          <h2>Get Started</h2>
-          <p>Create your account to start practicing</p>
+          <h2 className="text-center text-4xl mb-2 gradient-text">Get Started</h2>
+          <p className="text-center text-gray-400 mb-8">Create your account to start practicing</p>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -67,12 +67,7 @@ const SignUp = ({ navigateTo, onSignUp }) => {
 
             <div className="form-group">
               <label>I am a</label>
-              <select
-                name="role"
-                value={formData.role}
-                onChange={handleChange}
-                required
-              >
+              <select name="role" value={formData.role} onChange={handleChange} required>
                 <option value="">Select your role</option>
                 <option value="student">Student</option>
                 <option value="graduate">Recent Graduate</option>
@@ -96,14 +91,21 @@ const SignUp = ({ navigateTo, onSignUp }) => {
               </select>
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+            <button type="submit" className="btn btn-primary w-full">
               Create Account
             </button>
           </form>
 
-          <div className="auth-footer">
+          <div className="text-center mt-5 text-gray-400">
             Already have an account?{' '}
-            <a href="#" onClick={(e) => { e.preventDefault(); navigateTo('signin'); }}>
+            <a
+              href="#"
+              className="text-[#ff00ff] no-underline font-semibold hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('signin');
+              }}
+            >
               Sign In
             </a>
           </div>
